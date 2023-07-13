@@ -1,0 +1,142 @@
+listaMostrar=[]
+listaRut=[]
+listaRutAsistente=[]
+Platinum=0
+Gold=0
+Silver=0
+
+if listaMostrar==[]:
+    for x in range(1,101):
+        listaMostrar.append(x)
+        listaRut.append(x)
+
+def comprar():
+    cantidadentradas=0
+    asientoDeseado=0
+    rutCliente=''
+
+    while cantidadentradas<1 or cantidadentradas>3:
+        print("Los precios de las entradas son los siguientes:\n Platinum, $120.000. (Asientos del 1 al 20).\n Gold, $80.000. (Asientos del 21 al 50).\n Silver, $50.000. (Asientos del 51 al 100.).")
+        cantidadentradas=int(input("Ingrese Cantidad de entradas deseadas : (Solo se pueden comprar de 1 a 3)"))
+        if cantidadentradas<1 or cantidadentradas>3:
+            print("Solo puede comprar entre 1 a 3 Entradas ")
+    
+    print("Estas son las entradas Disponibles.\nSi tienen una 'X' estan ocupadas")
+    print("----------------------------------------------------")
+    print("|               ****Escenario****|                 |")
+    print("----------------------------------------------------")
+    print(f"{listaMostrar[0]} {listaMostrar[1]} {listaMostrar[2]} {listaMostrar[3]} {listaMostrar[4]} {listaMostrar[5]} {listaMostrar[6]} {listaMostrar[7]} {listaMostrar[8]} {listaMostrar[9]}")
+    print(f"{listaMostrar[10]} {listaMostrar[11]} {listaMostrar[12]} {listaMostrar[13]} {listaMostrar[14]} {listaMostrar[15]} {listaMostrar[16]} {listaMostrar[17]} {listaMostrar[18]} {listaMostrar[19]}")
+    print(f"{listaMostrar[20]} {listaMostrar[21]} {listaMostrar[22]} {listaMostrar[23]} {listaMostrar[24]} {listaMostrar[25]} {listaMostrar[26]} {listaMostrar[27]} {listaMostrar[28]} {listaMostrar[29]}")
+    print(f"{listaMostrar[30]} {listaMostrar[31]} {listaMostrar[32]} {listaMostrar[33]} {listaMostrar[34]} {listaMostrar[35]} {listaMostrar[36]} {listaMostrar[37]} {listaMostrar[38]} {listaMostrar[39]}")
+    print(f"{listaMostrar[40]} {listaMostrar[41]} {listaMostrar[42]} {listaMostrar[43]} {listaMostrar[44]} {listaMostrar[45]} {listaMostrar[46]} {listaMostrar[47]} {listaMostrar[48]} {listaMostrar[49]}")
+    print(f"{listaMostrar[50]} {listaMostrar[51]} {listaMostrar[52]} {listaMostrar[53]} {listaMostrar[54]} {listaMostrar[55]} {listaMostrar[56]} {listaMostrar[57]} {listaMostrar[58]} {listaMostrar[59]}")
+    print(f"{listaMostrar[60]} {listaMostrar[61]} {listaMostrar[62]} {listaMostrar[63]} {listaMostrar[64]} {listaMostrar[65]} {listaMostrar[66]} {listaMostrar[67]} {listaMostrar[68]} {listaMostrar[69]}")
+    print(f"{listaMostrar[70]} {listaMostrar[71]} {listaMostrar[72]} {listaMostrar[73]} {listaMostrar[74]} {listaMostrar[75]} {listaMostrar[76]} {listaMostrar[77]} {listaMostrar[78]} {listaMostrar[79]}")
+    print(f"{listaMostrar[80]} {listaMostrar[81]} {listaMostrar[82]} {listaMostrar[83]} {listaMostrar[84]} {listaMostrar[85]} {listaMostrar[86]} {listaMostrar[87]} {listaMostrar[88]} {listaMostrar[89]}")
+    print(f"{listaMostrar[90]} {listaMostrar[91]} {listaMostrar[92]} {listaMostrar[93]} {listaMostrar[94]} {listaMostrar[95]} {listaMostrar[96]} {listaMostrar[97]} {listaMostrar[98]} {listaMostrar[99]}")
+
+    while cantidadentradas>1 or cantidadentradas<3:
+        while asientoDeseado<1 or asientoDeseado>100:
+            asientoDeseado=int(input("Ingrese El Asiento Deseado"))
+            if asientoDeseado<1 or asientoDeseado>100:
+                print("Numero Fuera de Rango")
+            for i in range(1,101):
+                if asientoDeseado==(listaMostrar[i]=='X'):
+                    print("El Asiento Deseado No esta disponible")
+                    asientoDeseado=999999999999
+        if listaMostrar[i-1]==asientoDeseado:
+            listaMostrar[i-1]='X'
+            while len(rutCliente)<7 or len(rutCliente)>8:
+                rutCliente=str(input("Ingrese Su Rut sin guion, puntos ni dígito verificador"))
+                listaRut[i-1]=int(rutCliente)
+        if asientoDeseado>=1 or asientoDeseado<=20:
+            Platinum=Platinum+1
+        if asientoDeseado>=21 or asientoDeseado<=50:
+            Gold=Gold+1
+        if asientoDeseado>=51 or asientoDeseado<=100:
+            Silver=Silver+1
+        cantidadentradas=cantidadentradas-1
+        asientoDeseado=0
+        rutCliente=''
+
+
+def mostrar():
+    print("Estas Son las Entradas Disponibles")
+    print("Estas son las entradas Disponibles.\nSi tienen una 'X' estan ocupadas")
+    print("----------------------------------------------------")
+    print("|               ****Escenario****|                 |")
+    print("----------------------------------------------------")
+    print(f"{listaMostrar[0]} {listaMostrar[1]} {listaMostrar[2]} {listaMostrar[3]} {listaMostrar[4]} {listaMostrar[5]} {listaMostrar[6]} {listaMostrar[7]} {listaMostrar[8]} {listaMostrar[9]}")
+    print(f"{listaMostrar[10]} {listaMostrar[11]} {listaMostrar[12]} {listaMostrar[13]} {listaMostrar[14]} {listaMostrar[15]} {listaMostrar[16]} {listaMostrar[17]} {listaMostrar[18]} {listaMostrar[19]}")
+    print(f"{listaMostrar[20]} {listaMostrar[21]} {listaMostrar[22]} {listaMostrar[23]} {listaMostrar[24]} {listaMostrar[25]} {listaMostrar[26]} {listaMostrar[27]} {listaMostrar[28]} {listaMostrar[29]}")
+    print(f"{listaMostrar[30]} {listaMostrar[31]} {listaMostrar[32]} {listaMostrar[33]} {listaMostrar[34]} {listaMostrar[35]} {listaMostrar[36]} {listaMostrar[37]} {listaMostrar[38]} {listaMostrar[39]}")
+    print(f"{listaMostrar[40]} {listaMostrar[41]} {listaMostrar[42]} {listaMostrar[43]} {listaMostrar[44]} {listaMostrar[45]} {listaMostrar[46]} {listaMostrar[47]} {listaMostrar[48]} {listaMostrar[49]}")
+    print(f"{listaMostrar[50]} {listaMostrar[51]} {listaMostrar[52]} {listaMostrar[53]} {listaMostrar[54]} {listaMostrar[55]} {listaMostrar[56]} {listaMostrar[57]} {listaMostrar[58]} {listaMostrar[59]}")
+    print(f"{listaMostrar[60]} {listaMostrar[61]} {listaMostrar[62]} {listaMostrar[63]} {listaMostrar[64]} {listaMostrar[65]} {listaMostrar[66]} {listaMostrar[67]} {listaMostrar[68]} {listaMostrar[69]}")
+    print(f"{listaMostrar[70]} {listaMostrar[71]} {listaMostrar[72]} {listaMostrar[73]} {listaMostrar[74]} {listaMostrar[75]} {listaMostrar[76]} {listaMostrar[77]} {listaMostrar[78]} {listaMostrar[79]}")
+    print(f"{listaMostrar[80]} {listaMostrar[81]} {listaMostrar[82]} {listaMostrar[83]} {listaMostrar[84]} {listaMostrar[85]} {listaMostrar[86]} {listaMostrar[87]} {listaMostrar[88]} {listaMostrar[89]}")
+    print(f"{listaMostrar[90]} {listaMostrar[91]} {listaMostrar[92]} {listaMostrar[93]} {listaMostrar[94]} {listaMostrar[95]} {listaMostrar[96]} {listaMostrar[97]} {listaMostrar[98]} {listaMostrar[99]}")
+
+def verAsistente():
+    listaRutAsistente=[20637392,10974754,8739284]
+    print("verAsistente")
+    rutAsistente=''
+    variableRut=str(input("¿Desea Ingresar a un Nuevo Asistente? s/n"))
+    if variableRut=='s':
+        while len(rutAsistente)<7 or len(rutAsistente)>8:
+            rutAsistente=str(input("Ingrese Su Rut sin guion, puntos ni dígito verificador"))
+            listaRutAsistente.append(int(rutAsistente))
+
+    listaRutAsistente.sort()
+    print(listaRutAsistente)
+
+def ganancias():
+    print("******Ganancias******")
+    print("----------------------------------------------------")
+    print("|    Tipo Entrada    |    Cantidad    |    Total   |")
+    print("----------------------------------------------------")
+    print(f"|Platinum  $120.000 |    {Platinum}  |  {Platinum*120000} |")
+    print("----------------------------------------------------")
+    print(f"|Gold  $80.000      |    {Gold}      |   {Gold*80000} |")
+    print("----------------------------------------------------")
+    print(f"|Silver  $50.000    |    {Silver}    |  {Silver *50000} |")
+    print("----------------------------------------------------")
+    print(f"|TOTAL              |    {Silver+Gold+Platinum}    |  {Silver*50000+Gold*80000+Platinum*120000} |")
+    print("----------------------------------------------------")
+
+def menu():
+    opcion=0
+    while opcion<1 or opcion>4:
+        print("")
+        print("1)Comprar Entradas")
+        print("2)Mostrar ubicaciones disponibles")
+        print("3)Ver listado de asistentes")
+        print("4)Mostrar ganancias totales")
+        print("5)Salir")
+        print("")
+        opcion=int(input("Ingrese una opcion : "))
+        print("")
+        if opcion<1 or opcion>5:
+            print("Numero de opcion Incorrecta")
+        if opcion==1:
+            comprar()
+        if opcion==2:
+            mostrar()
+        if opcion==3:
+            verAsistente()
+        if opcion==4:
+            ganancias()
+        if opcion==5:
+            salirSistema()
+
+def salirSistema():
+    print("Usted a salido del Sistema\nAlan Basso \n13/07/2023")
+    return breakpoint()
+
+
+opcionMenu=0
+
+while opcionMenu<2:
+
+    menu()
